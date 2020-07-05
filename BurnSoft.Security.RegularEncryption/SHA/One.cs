@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Security.Cryptography;
 
 namespace BurnSoft.Security.RegularEncryption.SHA
 {
-     public class One
+    /// <summary>
+    /// Perform a SHA1 Encryption. decryption 
+    /// </summary>
+    public class One
     {
         /// <summary>
         /// Pass string to Encrypt using SHA
@@ -58,7 +58,6 @@ namespace BurnSoft.Security.RegularEncryption.SHA
         /// Decrypt a URL using SHA
         /// </summary>
         /// <param name="strUrl"></param>
-        /// <param name="strSessionID"></param>
         /// <returns></returns>
         public static string DecryptURL(string strUrl)
         {
