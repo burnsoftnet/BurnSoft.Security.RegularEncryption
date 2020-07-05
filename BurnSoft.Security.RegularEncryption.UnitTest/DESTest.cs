@@ -35,6 +35,7 @@ namespace BurnSoft.Security.RegularEncryption.UnitTest
         /// The test text verify sha
         /// </summary>
         private string _testTextVerifySha;
+        private string _expectedValueEncrypted;
         /// <summary>
         /// Initializes this instance.
         /// </summary>
@@ -47,14 +48,22 @@ namespace BurnSoft.Security.RegularEncryption.UnitTest
             _testTextVerifyMd5 = "51-CA-F8-84-41-C7-7A-C1-49-11-A3-D1-03-3A-C1-FE";
             _testTextVerifymd52 = "826a37cd6191450b00488f8d1ee34127";
             _testTextVerifySha = "aGFzaFRoaXM=";
-
+            _expectedValueEncrypted = "wmraZyDQKGsrThr454koDA==";
         }
         [TestMethod, TestCategory("Encrypt - DES")]
         public void DESEncrypt()
         {
             string value = DES.Do.Encrypt(_testText, "12345678");
             TestContext.WriteLine(value);
-            Assert.IsTrue(value.Length > 0);
+            Assert.IsTrue(value.Equals(_expectedValueEncrypted));
+        }
+
+        [TestMethod, TestCategory("Decrypt - DES")]
+        public void DESDecrypt()
+        {
+            string value = DES.Do.Decrypt(_expectedValueEncrypted, "12345678");
+            TestContext.WriteLine(value);
+            Assert.IsTrue(value.Equals(_testText));
         }
     }
 }
