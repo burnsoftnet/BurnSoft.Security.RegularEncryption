@@ -35,6 +35,9 @@ namespace BurnSoft.Security.RegularEncryption.UnitTest
         /// The test text verify sha
         /// </summary>
         private string _testTextVerifySha;
+        /// <summary>
+        /// The expected value encrypted
+        /// </summary>
         private string _expectedValueEncrypted;
         /// <summary>
         /// Initializes this instance.

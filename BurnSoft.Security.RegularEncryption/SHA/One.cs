@@ -24,7 +24,7 @@ namespace BurnSoft.Security.RegularEncryption.SHA
         }
 
         /// <summary>
-        /// Encypt the details of a url using SHA
+        /// Encrypt the details of a url using SHA
         /// </summary>
         /// <param name="strUrl"></param>
         /// <param name="strSessionID"></param>

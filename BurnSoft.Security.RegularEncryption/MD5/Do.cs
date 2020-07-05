@@ -3,7 +3,7 @@
 namespace BurnSoft.Security.RegularEncryption.MD5
 {
     /// <summary>
-    /// Perform a MD5 Encyrption
+    /// Perform a MD5 Encryption
     /// </summary>
     public class Do
     {
@@ -18,7 +18,7 @@ namespace BurnSoft.Security.RegularEncryption.MD5
             // Convert the input string to a byte array and compute the hash.
             System.Security.Cryptography.MD5 md5Hash = System.Security.Cryptography.MD5.Create();
             byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(cleanString));
-            // Create a new Stringbuilder to collect the bytes
+            // Create a new String builder to collect the bytes
             // // and create a string.
             StringBuilder sBuilder = new StringBuilder();
             // Loop through each byte of the hashed data
