@@ -52,6 +52,7 @@
     <Compile Include="MD5_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SHATest.cs" />
+    <Compile Include="DESTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
