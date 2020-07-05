@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
@@ -8,8 +6,17 @@ using System.IO;
 
 namespace BurnSoft.Security.RegularEncryption.DES
 {
+    /// <summary>
+    /// Perform/Do a DES Encryption or Decryption.
+    /// </summary>
     public class Do
     {
+        /// <summary>
+        /// Encrypts the specified value.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="key">The key.</param>
+        /// <returns>System.String.</returns>
         public static string Encrypt(string value, string key)
         {
             string sAns = @"";
@@ -46,7 +53,12 @@ namespace BurnSoft.Security.RegularEncryption.DES
                MyresultArray.Length);
             return sAns;
         }
-
+        /// <summary>
+        /// Decrypts the specified value.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="key">The key.</param>
+        /// <returns>System.String.</returns>
         public static string Decrypt(string value, string key)
         {
             byte[] MyDecryptArray = Convert.FromBase64String

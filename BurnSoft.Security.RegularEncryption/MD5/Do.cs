@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Security.Cryptography;
+﻿using System.Text;
 
 namespace BurnSoft.Security.RegularEncryption.MD5
 {
+    /// <summary>
+    /// Perform a MD5 Encyrption
+    /// </summary>
     public class Do
     {
         /// <summary>
