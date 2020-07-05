@@ -44,9 +44,8 @@
   <ItemGroup>
     <Compile Include="MD5\Do.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SHA\One.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SHA\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
