@@ -23,5 +23,24 @@ namespace BurnSoft.Security.RegularEncryption.SHA
             return eNC_str;
         }
 
+        /// <summary>
+        /// Pass string to decrypt Using SHA
+        /// </summary>
+        /// <param name="Data"></param>
+        /// <returns></returns>
+        public static string Decrypt(string Data)
+        {
+            try
+            {
+                byte[] dEC_data = Convert.FromBase64String(Data.Trim());
+                string dEC_Str = ASCIIEncoding.ASCII.GetString(dEC_data);
+                return dEC_Str;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
     }
 }
