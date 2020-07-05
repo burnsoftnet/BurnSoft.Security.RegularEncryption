@@ -24,6 +24,18 @@ namespace BurnSoft.Security.RegularEncryption.SHA
         }
 
         /// <summary>
+        /// Encypt the details of a url using SHA
+        /// </summary>
+        /// <param name="strUrl"></param>
+        /// <param name="strSessionID"></param>
+        /// <returns></returns>
+        public static string EncryptURL(string strUrl, string strSessionID)
+        {
+            string strReturn = $"{strSessionID}|{strUrl.Trim()}|{DateTime.Now.Ticks}";
+            return EncryptSHA(strReturn.Trim());
+        }
+
+        /// <summary>
         /// Pass string to decrypt Using SHA
         /// </summary>
         /// <param name="Data"></param>
