@@ -49,9 +49,47 @@ namespace BurnSoft.Security.RegularEncryption.UnitTest
             _testTextVerifySha = "aGFzaFRoaXM=";
 
         }
-        [TestMethod]
-        public void TestMethod1()
+        /// <summary>
+        /// Defines the test method EncryptShaTest.
+        /// </summary>
+        [TestMethod, TestCategory("Encrypt - SHA")]
+        public void EncryptShaTest()
         {
+            string value = SHA.One.Encrypt(_testText);
+            TestContext.WriteLine(value);
+            Assert.IsTrue(value.Equals(_testTextVerifySha));
+        }
+        /// <summary>
+        /// Defines the test method EncryptUrlTest.
+        /// </summary>
+        [TestMethod, TestCategory("Encrypt - SHA")]
+        public void EncryptUrlTest()
+        {
+            string value = SHA.One.EncryptURL(_testTextUrl, _testTextSessionId);
+            TestContext.WriteLine(value);
+            string value2 = SHA.One.DecryptURL(value);
+            TestContext.WriteLine(value2);
+            Assert.IsTrue(value2.Equals(_testTextUrl));
+        }
+        /// <summary>
+        /// Defines the test method DecryptShaTest.
+        /// </summary>
+        [TestMethod, TestCategory("Decrypt - SHA")]
+        public void DecryptShaTest()
+        {
+            string value = SHA.One.Decrypt(_testTextVerifySha);
+            TestContext.WriteLine(value);
+            Assert.IsTrue(value.Equals(_testText));
+        }
+        /// <summary>
+        /// Defines the test method DecryptUrlTest.
+        /// </summary>
+        [TestMethod, TestCategory("Decrypt - SHA")]
+        public void DecryptUrlTest()
+        {
+            string value = SHA.One.DecryptURL(SHA.One.EncryptURL(_testTextUrl, _testTextSessionId));
+            TestContext.WriteLine(value);
+            Assert.IsTrue(value.Equals(_testTextUrl));
         }
     }
 }

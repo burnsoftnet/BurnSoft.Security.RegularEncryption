@@ -32,7 +32,7 @@ namespace BurnSoft.Security.RegularEncryption.SHA
         public static string EncryptURL(string strUrl, string strSessionID)
         {
             string strReturn = $"{strSessionID}|{strUrl.Trim()}|{DateTime.Now.Ticks}";
-            return EncryptSHA(strReturn.Trim());
+            return Encrypt(strReturn.Trim());
         }
 
         /// <summary>
