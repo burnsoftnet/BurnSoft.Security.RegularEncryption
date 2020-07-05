@@ -42,5 +42,19 @@ namespace BurnSoft.Security.RegularEncryption.SHA
             }
         }
 
+        /// <summary>
+        /// Decrypt a URL using SHA
+        /// </summary>
+        /// <param name="strUrl"></param>
+        /// <param name="strSessionID"></param>
+        /// <returns></returns>
+        public static string DecryptURL(string strUrl)
+        {
+            string pageEncrypt;
+            pageEncrypt = Decrypt(strUrl);
+            string[] stringary = pageEncrypt.Split('|');
+            return stringary[1];
+        }
+
     }
 }
