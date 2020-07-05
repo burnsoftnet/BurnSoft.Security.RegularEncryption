@@ -52,7 +52,8 @@ namespace BurnSoft.Security.RegularEncryption.UnitTest
         [TestMethod, TestCategory("Encrypt - DES")]
         public void DESEncrypt()
         {
-            string value = DES.Do.Encrypt(_testText, "12345678", "12345678");
+            string value = DES.Do.Encrypt(_testText, "12345678");
+            TestContext.WriteLine(value);
             Assert.IsTrue(value.Length > 0);
         }
     }
